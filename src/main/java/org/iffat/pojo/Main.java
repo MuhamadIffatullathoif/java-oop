@@ -3,7 +3,7 @@ package org.iffat.pojo;
 public class Main {
     public static void main(String[] args) {
         for (int i = 0; i <= 5; i++) {
-            Student student = new Student(
+            LPAStudent student = new LPAStudent(
                     "S92300" + i,
                     switch (i) {
                         case 1 -> "Mary";
@@ -17,6 +17,23 @@ public class Main {
                     "Java Masterclass"
             );
             System.out.println(student);
+            Student pojoStudent = new Student(
+                    "S923006",
+                    "Ann",
+                    "05/11/1985",
+                    "Java Masterclass"
+            );
+            LPAStudent recordStudent = new LPAStudent(
+                    "S923007",
+                    "Bill",
+                    "05/11/1985",
+                    "Java Masterclass"
+            );
+
+            System.out.println(pojoStudent);
+            System.out.println(recordStudent);
+            System.out.println(pojoStudent.getName() + " is taking " + pojoStudent.getClassList());
+            System.out.println(recordStudent.name() + " is taking " + recordStudent.classList());
         }
     }
 }
